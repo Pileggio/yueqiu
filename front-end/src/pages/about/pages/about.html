@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="head-background">
+    <div class="head-img" *ngIf="userInfo" [ngStyle]="{'background': 'url(' + userInfo.U_head + ') no-repeat'}"></div>
+    <div class="head-img" style="background: url('../../../assets/head.jpg') no-repeat"></div>
+  </div>
+  <div class="head" (tap)="goAuth()">
+    <div class="head-back"></div>
+    <img src="./assets/head.jpg" alt="" *ngIf="userInfo">
+    <ion-icon name="person" *ngIf="!userInfo"></ion-icon>
+  </div>
+  <div class="user-infomation">
+    <div class="name">
+      <span *ngIf="userInfo">
+        {{userInfo.U_name}}
+      </span>
+      <span *ngIf="!userInfo" (tap)="goAuth()">请登录</span>
+    </div>
+    <div class="sub-info" *ngIf="userInfo">
+      <div class="info">
+        <div class="info-type">
+          身高
+        </div>
+        <div class="info-number">
+          {{userInfo.U_tall}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-type">
+          体重
+        </div>
+        <div class="info-number">
+          {{userInfo.U_weight}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-type">
+          性别
+        </div>
+        <div class="info-number">
+          {{userInfo.U_gender}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu" *ngIf="userInfo">
+    <div class="menu-outer">
+      <div class="left" [navPush]="myContact" [navParams]="{actionType: '我参与的'}">
+        <div class="number">
+          {{joined}}
+        </div>
+        <div class="title">
+          我参与的
+        </div>
+      </div>
+      <div class="right" [navPush]="myContact" [navParams]="{actionType: '我发布的'}">
+        <div class="number">
+          {{hosted}}
+        </div>
+        <div class="title">
+          我发布的
+        </div>
+      </div>
+    </div>
+    <div class="menu-regular">
+      <div class="left">
+        <div class="number">
+          <ion-icon name="lock"></ion-icon>
+        </div>
+        <div class="title">
+          修改密码
+        </div>
+      </div>
+      <div class="right" (tap)="logout()">
+        <div class="number">
+          <ion-icon name="log-out"></ion-icon>
+        </div>
+        <div class="title">
+          退出登录
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

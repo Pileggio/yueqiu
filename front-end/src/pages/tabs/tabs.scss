@@ -1,0 +1,13 @@
+.tabbar{
+  background: transparent!important;
+  border:none!important;
+  height: 55px;
+  &:before{
+    background-image: none !important;
+  }
+  .icon{
+    color: #fff!important;
+    font-size:3.5rem;
+    height: inherit;
+  }
+}

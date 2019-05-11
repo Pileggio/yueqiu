@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      约球儿
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-box">
+    <div class="content-title">
+      房间成员
+    </div>
+    <ion-scroll scrollY="true">
+      <div class="player" *ngFor="let player of players">
+        <div class="user-name">
+          {{player.U_name}}
+        </div>
+        <div class="state" [ngClass]="{'owner':player.owner}">
+          {{player.owner? '房主' : '加入'}}
+        </div>
+      </div>
+    </ion-scroll>
+    <div class="login-button" (tap)="join()">
+      加入
+    </div>
+  </div>
+</ion-content>

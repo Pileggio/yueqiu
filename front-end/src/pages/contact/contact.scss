@@ -1,0 +1,97 @@
+page-contact {
+  background: linear-gradient(-225deg, #F76363 0%, #F4804A 100%);
+  & > * {
+    background-color: transparent !important;
+  }
+  .scroll-content {
+    background: #fff;
+  }
+  .toolbar-background {
+    background-color: transparent;
+    border-bottom: none !important;
+  }
+  ion-navbar {
+    .toolbar-title {
+      color: #fff !important;
+    }
+  }
+  .message {
+    margin: 8px 0;
+    padding: 15px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.24);
+    .message-head {
+      overflow: auto;
+      .left {
+        display: flex;
+        justify-content: center;
+        float: left;
+        span {
+          display: flex;
+          align-items: center;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          margin: 0 15px 0 0;
+          border-radius: 100%;
+        }
+      }
+      .right {
+        float: right;
+        font-size: 20px;
+        line-height: 40px;
+        color: #F76661;
+        letter-spacing: 0;
+      }
+    }
+    .message-content {
+      margin: 15px 0;
+    }
+    .message-image {
+      img {
+        filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.26));
+        border-radius: 2px;
+        width: 100%;
+      }
+    }
+    .message-controller {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 14px;
+      color: #BAB9B9;
+      ion-icon {
+        font-size: 2em;
+        margin-right: 10px;
+      }
+      .control-button {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .message-replys {
+      margin: 15px -15px 0 -15px;
+      padding: 15px;
+      border-top: 1px solid #e8e7e7;
+      .user-name {
+        color: #4A90E2;
+        &::after {
+          content: ': ';
+        }
+      }
+    }
+  }
+  .add-comment {
+    margin-top: 15px;
+    input {
+      border: 1px solid #e3e3e3;
+      height: 40px;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+  overflow: auto;
+}

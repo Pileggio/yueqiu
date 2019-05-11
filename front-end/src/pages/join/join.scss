@@ -1,0 +1,74 @@
+join {
+  background: linear-gradient(-225deg, #F76363 0%, #F4804A 100%);
+  & > * {
+    background-color: transparent !important;
+  }
+  .scroll-content {
+    background: transparent;
+  }
+  .toolbar-background {
+    background-color: transparent;
+    border-bottom: none !important;
+  }
+  ion-navbar {
+    .back-button {
+      color: #fff !important;
+    }
+    .toolbar-title {
+      color: #fff !important;
+    }
+  }
+  .scroll-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content-box {
+      background: #FFFFFF;
+      box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.17);
+      border-radius: 5px;
+      padding: 0 32px;
+      width: 80%;
+      min-height: 80%;
+      ion-scroll {
+        height: 300px;
+        .scroll-zoom-wrapper {
+          height: 100%;
+          width: 100%;
+        }
+        .player {
+          display: flex;
+          justify-content:space-between;
+          width: 100%;
+          padding: 5px 0;
+          border-top: 1px solid #e3e3e3;
+          &:last-child {
+            border-bottom: 1px solid #e3e3e3;
+          }
+        }
+        .state{
+          color: #2ca02c;
+        }
+        .owner{
+          color: #ff553c;
+        }
+      }
+    }
+  }
+  .content-title {
+    text-align: center;
+    font-size: 18px;
+    color: #4A4A4A;
+    padding: 30px 0;
+  }
+
+  .login-button {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    margin: 20px auto;
+    background-image: linear-gradient(-225deg, #F76363 0%, #F4804A 100%);
+  }
+}

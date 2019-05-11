@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      消息圈
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="message" *ngFor="let room of roomList;let index">
+    <div class="message-head">
+      <div class="left">
+        <img [src]="room.U_head">
+        <span>{{room.U_name}}</span>
+      </div>
+      <div class="right">
+        {{room.joined}}/{{room.R_capacity}}
+      </div>
+    </div>
+    <div class="message-content">
+      {{room.R_intro}}
+    </div>
+    <div class="message-image" *ngIf="room.R_image">
+      <img [src]="room.R_image" alt="">
+    </div>
+    <div class="message-controller">
+      <div class="control-button">
+        <ion-icon name="text" (tap)="addComment()"></ion-icon>
+        <div>{{room.comments.length}}</div>
+      </div>
+      <div class="control-button">
+        <ion-icon name="flag"></ion-icon>
+        <div [navPush]="joinPage" [navParams]="{roomId: room.R_Id}">我要报名</div>
+      </div>
+    </div>
+    <div class="add-comment">
+      <input type="text" (keypress)="($event.which === 13)?sendComment($event,index):0">
+    </div>
+    <div class="message-replys" *ngIf="room.comments.length">
+      <div class="reply" *ngFor="let comment of room.comments">
+        <span class="user-name">{{comment.U_name}}</span>
+        <span class="content">
+          {{comment.C_content}}
+        </span>
+      </div>
+    </div>
+  </div>
+</ion-content>

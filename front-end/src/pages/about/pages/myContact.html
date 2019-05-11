@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      约球儿
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-box">
+    <div class="content-title">
+      {{actionType}}
+    </div>
+    <ion-scroll scrollY="true">
+      <div class="player" *ngFor="let room of roomList" [navPush]="joinPage" [navParams]="{roomId: room.roomId}">
+        {{room.result}}
+      </div>
+    </ion-scroll>
+  </div>
+</ion-content>

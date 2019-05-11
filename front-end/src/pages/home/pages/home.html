@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>约球儿</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides autoplay="2000" pager loop paginationType="bullets">
+    <ion-slide>
+      <img src="./assets/banner/banner_1.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/banner/banner_2.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/banner/banner_3.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/banner/banner_4.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/banner/banner_5.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
+  <div class="battle_rooms">
+    <ion-scroll scrollY (touchstart)="isDense = true">
+      <div class="room" *ngFor="let room of roomList" [navPush]="joinPage" [navParams]="{roomId: room.R_Id}">
+        <div class="left">
+          {{room.joined}}/{{room.R_capacity}}
+        </div>
+        <div class="right">
+          <div class="type">
+            {{room.R_intro}}
+          </div>
+          <div class="place">
+            {{room.R_place}}
+          </div>
+          <div class="time">
+            {{localDate(room.R_date)}}
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+  </div>
+  <div class="create_battle" [ngClass]="{dense: isDense}">
+    <div class="hide_create">
+      <ion-icon name="arrow-down" (tap)="isDense = !isDense"></ion-icon>
+    </div>
+    <div class="create_button" (tap)="createRoom()">
+      <ion-icon name="basketball-outline"></ion-icon>
+      我要约球
+    </div>
+  </div>
+</ion-content>
